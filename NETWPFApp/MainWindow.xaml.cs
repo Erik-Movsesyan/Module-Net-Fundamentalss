@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using GreetingLib;
+using System.Text.RegularExpressions;
 using System.Windows;
 
 namespace NETWPFApp
@@ -18,12 +19,10 @@ namespace NETWPFApp
         {
             var username = UsernameInput.Text;
             var isUsernameValid = ValidateUsername(username);
-            var isInputWhiteSpace = string.IsNullOrWhiteSpace(username);
 
-            MessageBox.Show($"{(isInputWhiteSpace ? "No username provided!"
-                : isUsernameValid
-                    ? $"Hello, {username}"
-                    : "Invalid Username")}");
+            var greeting = Greeting.GreetUser(username, isUsernameValid);
+
+            MessageBox.Show(greeting);
         }
 
         static bool ValidateUsername(string username)

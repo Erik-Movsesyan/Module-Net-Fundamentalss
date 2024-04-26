@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GreetingLib;
+using System;
 using System.Text.RegularExpressions;
 
 namespace NETConsoleApp;
@@ -18,10 +19,8 @@ public class Program
             isUserNameValid = ValidateUsername(username);
         }
 
-        Console.WriteLine($"{(!userNameProvided ? "No username provided!"
-            : isUserNameValid
-                ? $"Hello, {username}"
-                : "Invalid Username")}");
+        var greeting = Greeting.GreetUser(username, isUserNameValid);
+        Console.WriteLine(greeting);
     }
 
     static bool ValidateUsername(string username)

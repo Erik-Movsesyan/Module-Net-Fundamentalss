@@ -25,6 +25,6 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Column="1"  Grid.Row="1" HorizontalAlignment="Center" Margin="40,30,10,0" TextWrapping="Wrap" Text="What is your username?" VerticalAlignment="Top" FontSize="16" FontFamily="Calibri" FontWeight="Bold" Width="164" Height="20"/>
         <TextBox x:Name="UsernameInput" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18" Margin="40,5,10,0"/>
-        <Button x:Name="GoButton" Grid.Column="1" Grid.Row="3" Content="Ok"  FontFamily="Arial Nova Light" FontWeight="Bold" FontSize="9" Margin="90,10,65,78" Click="GoButton_Click" />
+        <Button x:Name="GoButton" Grid.Column="1" Grid.Row="3" Content="Go"  FontFamily="Arial Nova Light" FontWeight="Bold" FontSize="9" Margin="90,10,65,78" Click="GoButton_Click" />
     </Grid>
 </Window>
