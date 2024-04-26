@@ -6,21 +6,20 @@ namespace NETConsoleApp;
 
 public class Program
 {
-
-    static void Main(string[] args)
+    static void Main()
     {
-        var userNameProvided = args.Length > 0;
-        string username = string.Empty;
-        bool isUserNameValid = false;
+        Console.WriteLine("Provide your username, please");
+        var username = Console.ReadLine();
+        var isUserNameNullOrWhiteSpace = string.IsNullOrWhiteSpace(username);
+        var isUserNameValid = ValidateUsername(username);
 
-        if (userNameProvided)
-        {
-            username = args[0];
-            isUserNameValid = ValidateUsername(username);
-        }
+        var greeting = $"{(isUserNameNullOrWhiteSpace ? "No username provided!"
+            : isUserNameValid
+                ? $"Hello, {username}"
+                : "Invalid Username")}";
 
-        var greeting = Greeting.GreetUser(username, isUserNameValid);
-        Console.WriteLine(greeting);
+        var greetingConcatenated = Greeting.GreetUser(greeting);
+        Console.WriteLine(greetingConcatenated);
     }
 
     static bool ValidateUsername(string username)

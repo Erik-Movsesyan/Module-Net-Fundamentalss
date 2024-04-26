@@ -18,11 +18,16 @@ namespace NETWPFApp
         private void GoButton_Click(object sender, RoutedEventArgs e)
         {
             var username = UsernameInput.Text;
-            var isUsernameValid = ValidateUsername(username);
+            var isNullOrWhiteSpace = string.IsNullOrWhiteSpace(username);
+            var isUserNameValid = ValidateUsername(username);
 
-            var greeting = Greeting.GreetUser(username, isUsernameValid);
+            var greeting = $"{(isNullOrWhiteSpace ? "No username provided!"
+                : isUserNameValid
+                    ? $"Hello, {username}"
+                    : "Invalid Username")}";
 
-            MessageBox.Show(greeting);
+            var greetingConcatenated = Greeting.GreetUser(greeting);
+            MessageBox.Show(greetingConcatenated);
         }
 
         static bool ValidateUsername(string username)

@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <PackageOutputPath>C:\Users\Erik_Movsesyan\LocalNugetPackages</PackageOutputPath>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
 </Project>
